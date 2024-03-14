@@ -10,7 +10,7 @@ const theme = createTheme({
 });
 
 const App = () => (
-  <MantineProvider theme={theme} defaultColorScheme="light">
+  <MantineProvider theme={theme} defaultColorScheme="dark">
     <div>
       <Dashboard />
     </div>

@@ -9,6 +9,7 @@ import {
 } from "@tabler/icons-react";
 import classes from "./StatsGrid.module.css";
 import UsersRolesTable from "../../components/UsersRolesTable/UsersRolesTable";
+import Charts from "../../components/Charts/Charts";
 
 const icons = {
   user: IconUserPlus,
@@ -62,6 +63,9 @@ function Dashboard() {
       <Stack gap="lg">
         <div>
           <SimpleGrid cols={{ base: 1, xs: 2, md: 4 }}>{stats}</SimpleGrid>
+        </div>
+        <div>
+          <Charts />
         </div>
         <div>
           <UsersRolesTable />
