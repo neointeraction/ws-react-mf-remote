@@ -1,4 +1,4 @@
-import { Group, Paper, SimpleGrid, Stack, Text } from "@mantine/core";
+import { Group, Paper, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import {
   IconUserPlus,
   IconDiscount2,
@@ -10,6 +10,7 @@ import {
 import classes from "./StatsGrid.module.css";
 import UsersRolesTable from "../../components/UsersRolesTable/UsersRolesTable";
 import Charts from "../../components/Charts/Charts";
+import useHost from "host/useHost";
 
 const icons = {
   user: IconUserPlus,
@@ -26,6 +27,8 @@ const data = [
 ];
 
 function Dashboard() {
+  const dataHost = useHost();
+  console.log(dataHost, "useHost");
   const stats = data.map((stat) => {
     const Icon = icons[stat.icon];
     const DiffIcon = stat.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
@@ -62,6 +65,7 @@ function Dashboard() {
     <div className={classes.root}>
       <Stack gap="lg">
         <div>
+          <Title>Hello, {dataHost.userInfo}</Title>
           <SimpleGrid cols={{ base: 1, xs: 2, md: 4 }}>{stats}</SimpleGrid>
         </div>
         <div>

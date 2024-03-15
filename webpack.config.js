@@ -44,7 +44,9 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "dashboard",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        host: "host@http://192.168.179.28:8080/remoteEntry.js",
+      },
       exposes: {
         "./Dashboard": "./src/pages/Dashboard/Dashboard.jsx",
         "./App": "./src/App.jsx",
