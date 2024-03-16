@@ -45,7 +45,7 @@ module.exports = (_, argv) => ({
       name: "dashboard",
       filename: "remoteEntry.js",
       remotes: {
-        host: "host@http://192.168.179.28:8080/remoteEntry.js",
+        host: "host@localhost:8080/remoteEntry.js",
       },
       exposes: {
         "./Dashboard": "./src/pages/Dashboard/Dashboard.jsx",

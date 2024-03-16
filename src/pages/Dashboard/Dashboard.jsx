@@ -10,7 +10,7 @@ import {
 import classes from "./StatsGrid.module.css";
 import UsersRolesTable from "../../components/UsersRolesTable/UsersRolesTable";
 import Charts from "../../components/Charts/Charts";
-import useHost from "host/useHost";
+import {useHost,HostProvider} from "host/store";
 
 const icons = {
   user: IconUserPlus,
@@ -28,7 +28,6 @@ const data = [
 
 function Dashboard() {
   const dataHost = useHost();
-  console.log(dataHost, "useHost");
   const stats = data.map((stat) => {
     const Icon = icons[stat.icon];
     const DiffIcon = stat.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
@@ -79,4 +78,10 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default ()=>{
+  return (
+    <HostProvider>
+      <Dashboard />
+    </HostProvider>
+  )
+};
